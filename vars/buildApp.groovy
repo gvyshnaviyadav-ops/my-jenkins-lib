@@ -3,7 +3,7 @@ def call(String tag,String dockerHubUsername) {
         echo "Building images..."
         
         docker build -t todo-frontend:${tag} ./todo-frontend
-        docker build -t todo-backend:${tag} ./todo-backend
+        docker build -t todo-backend:${tag} ./todo_project
 
         echo "Tagging and pushing images to Docker Hub..."
         docker tag todo-frontend:${tag} ${dockerHubUsername}/todo-frontend:${tag}
