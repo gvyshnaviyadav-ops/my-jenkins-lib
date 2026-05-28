@@ -3,6 +3,7 @@ def call(String stackName,String tag,String dockerHubUsername) {
         echo "Deploying ${stackName}..."
         export tag=${tag}
         export duser=${dockerHubUsername}
+        docker stack rm ${stackName} || true
         docker stack deploy \
             -c docker-compose.yml \
             ${stackName}
