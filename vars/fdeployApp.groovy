@@ -6,6 +6,6 @@ def call(String stackName,String tag,String dockerHubUsername) {
         sleep 20
         docker stack deploy  -c docker-compose.yml ${stackName}
         echo "Verify"
-        echo"docker stack ps ${stackName}"
+        docker stack ps ${stackName}
     """
 }
