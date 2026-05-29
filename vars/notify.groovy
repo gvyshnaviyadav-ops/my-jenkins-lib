@@ -4,7 +4,7 @@ def call(
     String buildNumber,
     String buildUrl,
     String status,
-    Boolean mentionAll = false,
+    Boolean mentionAll = false
 ) {
 
     def prefix = mentionAll ? '<users/all> ' : ''
