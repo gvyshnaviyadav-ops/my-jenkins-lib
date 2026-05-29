@@ -5,7 +5,6 @@ def call(String stackName,String tag,String dockerHubUsername) {
         export duser=${dockerHubUsername}
         docker stack rm ${stackName} || true
         sleep 20
-        docker images
         docker stack deploy  -c docker-compose.yml ${stackName}
         echo "Verify"
         docker stack ps ${stackName}
