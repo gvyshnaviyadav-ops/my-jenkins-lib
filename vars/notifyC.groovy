@@ -1,11 +1,4 @@
-def call(
-    String credentialId,
-    String jobName,
-    String buildNumber,
-    String buildUrl,
-    String status,
-    Boolean mentionAll = false
-) {
+def call( String credentialId,String jobName,String buildNumber,String buildUrl,String status,Boolean mentionAll = false) {
 
     def prefix = mentionAll ? '<users/all> ' : ''
 
