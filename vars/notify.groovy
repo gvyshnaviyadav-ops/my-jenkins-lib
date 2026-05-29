@@ -8,10 +8,9 @@ def call(
 ) {
 
     def prefix = mentionAll ? '<users/all> ' : ''
-    def extra  = extraMessage?.trim() ? "\\n${extraMessage}" : ''
 
     def payload = """{
-        "text":"${prefix} *${jobName}* — Build *#${buildNumber}*\\n*Status:* ${status}\\n*Link:* ${buildUrl}${extra}"
+        "text":"${prefix} *${jobName}* — Build *#${buildNumber}*\\n*Status:* ${status}\\n*Link:* ${buildUrl}"
     }"""
 
     withCredentials([string(credentialsId: credentialId, variable: 'WEBHOOK_URL')]) {
