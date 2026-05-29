@@ -1,5 +1,6 @@
 def call(String stackName,String tag,String dockerHubUsername) {
     sh """
+        
         echo "deploying ${stackName}"
         export tag=${tag}
         export duser=${dockerHubUsername}
