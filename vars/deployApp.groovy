@@ -3,11 +3,12 @@ def call(String stackName,String tag,String dockerHubUsername) {
         echo "deploying ${stackName}"
         export tag=${tag}
         export duser=${dockerHubUsername}
-        docker stack rm ${stackName} || true
+        echo "docker stack rm ${stackName} || true"
         sleep 20
-        docker stack deploy  -c docker-compose.yml ${stackName}
+        echo "docker stack deploy  -c docker-compose.yml ${stackName}"
+        docker compose -f test-compose.yml  up --build
             
         echo "Verify"
-        docker stack ps ${stackName}
+        echo"docker stack ps ${stackName}"
     """
 }
